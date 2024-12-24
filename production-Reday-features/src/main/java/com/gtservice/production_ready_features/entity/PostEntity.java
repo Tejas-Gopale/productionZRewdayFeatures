@@ -8,6 +8,8 @@ import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+import org.hibernate.envers.Audited;
+import org.hibernate.envers.NotAudited;
 import org.springframework.data.annotation.CreatedBy;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedBy;
@@ -34,7 +36,8 @@ import lombok.Setter;
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "post") 
+@Table(name = "post")
+@Audited
 public class PostEntity extends AuditableEntity{
 
 	@Id
@@ -46,7 +49,9 @@ public class PostEntity extends AuditableEntity{
 	@NotEmpty
 	@NotBlank
 	private String title;
+	
 	@NotEmpty
+	@NotAudited 
 	private String description;
 	
 

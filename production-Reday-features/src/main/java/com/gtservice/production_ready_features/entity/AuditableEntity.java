@@ -3,6 +3,7 @@ package com.gtservice.production_ready_features.entity;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
+import org.hibernate.envers.Audited;
 import org.springframework.data.annotation.CreatedBy;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedBy;
@@ -19,6 +20,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @EntityListeners(AuditingEntityListener.class) // Anotation for adding the Auditing on the entity step 1
+@Audited
 public class AuditableEntity {
 
 //	Auditing Part 
